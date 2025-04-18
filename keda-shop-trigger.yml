@@ -19,14 +19,6 @@ spec:
         end: "0 18 * * *"          # 오후 6시 정각
         desiredReplicas: "3"
 
-    # 근무시간 외 스케일다운: 18시~다음날 9시까지 1개로
-    - type: cron
-      metadata:
-        timezone: "Asia/Seoul"
-        start: "0 18 * * *"        # 오후 6시 정각
-        end: "0 9 * * *"           # 다음날 9시 정각
-        desiredReplicas: "1"
-
     # CPU 기준으로 60% 이상이면 확장
     - type: cpu
       metadata:
